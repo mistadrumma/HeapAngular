@@ -26,8 +26,8 @@ app.get('/*', function(req, res) {
 
 
 // listen (start app with node server.js) ======================================
-//var port = Number(process.env.PORT || 5000);
-var port = 3000;
+var port = Number(process.env.PORT || 5000);
+//var port = 3000;
 app.listen(port, function() {
 	console.log("Listening on " + port);
 });
