@@ -5,8 +5,8 @@ App has been modified to allow Express Node.js server and allow push on Heroku
 
 ## Run the app
 
-1) Download / clone app
-2) Run app locally or push it to Heroku
+1. Download / clone app
+2. Run app locally or push it to Heroku
 
 ## Running locally
 
