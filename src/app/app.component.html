@@ -1,3 +1,5 @@
-<main class="main-wrap">
- <app-header></app-header>
+<main class="main-wrap" [ngClass]="{'main-wrap--move': move}">
+ <app-header (search)="moveWrap();" ></app-header>
 </main>
+
+<app-search [move] = 'move' (close)="moveWrap();"></app-search>
