@@ -1,0 +1,6 @@
+@font-face {
+    font-family: 'Tavolga';
+    src: local('Tavolga Free'), local('Tavolga-Free'), url('Tavolgafree.woff2') format('woff2'), url('Tavolgafree.woff') format('woff'), url('Tavolgafree.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
