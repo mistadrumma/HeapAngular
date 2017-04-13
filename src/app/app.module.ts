@@ -5,6 +5,10 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { SearchComponent } from './search/search.component';
+import { ContainerComponent } from './container/container.component';
+import { MainArticleComponent } from './container/main-article/main-article.component';
+
+
 
 
 
@@ -13,6 +17,10 @@ import { SearchComponent } from './search/search.component';
     AppComponent,
     HeaderComponent,
     SearchComponent,
+    ContainerComponent,
+    MainArticleComponent,
+
+
 
 
 
