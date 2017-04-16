@@ -11,7 +11,7 @@ import {MainArticle} from "../main-article/main-article";
 })
 export class PostDetailComponent implements OnInit {
 
-  article: Object  = {};
+  article: MainArticle[]  = [];
   id: number;
   constructor(private activateRoute: ActivatedRoute,
               private postService: PostService
@@ -23,7 +23,7 @@ export class PostDetailComponent implements OnInit {
 
   ngOnInit() {
 
-    this.article  = this.postService.getPost(this.id)
+    this.article  = this.postService.getPost(this.id);
 
     console.log(this.article)
 
