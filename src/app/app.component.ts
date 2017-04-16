@@ -8,7 +8,6 @@ import {Component, OnInit} from '@angular/core';
 })
 export class AppComponent implements OnInit {
   move: boolean = false;
-  name: string = "vasya"
 
   moveWrap () {
     this.move = !this.move ;
@@ -16,5 +15,5 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
 
   }
-  title = 'This is my App Man!';
+
 }

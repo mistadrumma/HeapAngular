@@ -19,7 +19,6 @@ export class SearchComponent implements OnInit {
     this.close.emit()
   }
   ngOnInit() {
-    console.log(this.move)
   }
 
 }

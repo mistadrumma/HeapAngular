@@ -62,6 +62,7 @@
             float: left;
             &:extend(.ul-unstyled);
             color:@social-color;
+            -webkit-padding-start: 0px;
 
             li {
               display: inline-block;
@@ -70,7 +71,7 @@
 
 
               span {
-                font-size: 12px;
+                font-size: 16px;
               }
             }
           }
@@ -152,6 +153,7 @@
           color: @sub-title;
           a {
             .a-heap()
+
           }
         }
         header {
@@ -171,16 +173,18 @@
             float: left;
             &:extend(.ul-unstyled);
             color:@social-color;
+            -webkit-padding-start: 0px;
             li {
               display: inline-block;
               cursor: pointer;
               span {
-                font-size: 12px;
+                font-size: 16px;
               }
             }
           }
           a {
-            .a-heap()
+            .a-heap();
+            float: right;
           }
         }
       }
@@ -200,6 +204,7 @@
           border: none;
           max-width: 100%;
           height: auto;
+          margin: 0 auto;
         }
       }
     }

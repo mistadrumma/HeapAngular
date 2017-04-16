@@ -7,8 +7,9 @@ import { HeaderComponent } from './header/header.component';
 import { SearchComponent } from './search/search.component';
 import { ContainerComponent } from './container/container.component';
 import { MainArticleComponent } from './container/main-article/main-article.component';
-
-
+import { PostDetailComponent } from './container/post-detail/post-detail.component';
+import { routing,
+  appRoutingProviders }  from './app.routes';
 
 
 
@@ -19,18 +20,17 @@ import { MainArticleComponent } from './container/main-article/main-article.comp
     SearchComponent,
     ContainerComponent,
     MainArticleComponent,
-
-
-
-
-
+    PostDetailComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    routing,
   ],
-  providers: [],
+  providers: [
+    appRoutingProviders,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

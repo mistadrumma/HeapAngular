@@ -1,5 +1,5 @@
 <div class="search" [ngClass]="{'search--open': move}">
-  <a href="#!" id="btn-search-close" class="btn--search-close" (click)="tooggleMove()"><i  class="fa fa-times btn--search-close" aria-hidden="true"></i></a>
+  <a href="#!" id="btn-search-close" class="btn--search-close" (click)="tooggleMove(); false"><i  class="fa fa-times btn--search-close" aria-hidden="true"></i></a>
   <form class="search__form" action="">
     <input class="search__input" name="search" type="search" placeholder="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
     <span class="search__info">Нажми enter для поиска или ESC что бы закрыть</span>
