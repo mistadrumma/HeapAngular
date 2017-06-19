@@ -2,6 +2,7 @@ import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 import {Menu} from "./menu";
 import {HeaderService} from "./header.service";
 
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -11,26 +12,25 @@ import {HeaderService} from "./header.service";
 export class HeaderComponent implements OnInit {
   @Output() search: EventEmitter<any> = new EventEmitter();
 
-  menu: Menu[] = [];
+  menus: Menu[] =[];
   private errorMessage;
   constructor(private headerService: HeaderService) {
 
   }
 
-  getMenuItem()
+  getMenuItem() : void
   {
     this.headerService.getMenu()
-      .then(
-        data => this.menu = data,
-        error =>  this.errorMessage = <any>error
-      );
+      .then(body => this.menus = body);
+
   }
 
   initSearch() {
     this.search.emit();
   }
-  ngOnInit() {
-console.log(this.getMenuItem());
+  ngOnInit():void {
+    this.getMenuItem();
+    console.log(this.menus)
 
   }
 

@@ -2,18 +2,13 @@
   <nav class="site-nav navbar">
     <div class="container">
       <div class="navbar-inner">
-        <a class="navbar-brand" routerLink="'/'">
+        <a class="navbar-brand" (click)="getMenuItem()" routerLink="'/'">
           <span>Heap</span>
         </a>
         <div class="nav-list">
           <div class="nav-list-inner">
             <ul >
-              <li><a href="#!" class="active menu-item">Frontend<span></span></a></li>
-              <li><a href="#!" class="menu-item">Backend<span></span></a></li>
-              <li><a href="#!" class="menu-item">Design<span></span></a></li>
-              <li><a href="#!" class="menu-item">Testing<span></span></a></li>
-              <li><a href="#!" class="menu-item">О нас<span></span></a></li>
-
+              <li><a *ngFor="let item of menus" href="{{menus.link}}" class="active {{menus.cssClass}}">{{menus.name}}<span></span></a></li>
             </ul>
           </div>
         </div>
