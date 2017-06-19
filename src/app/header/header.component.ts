@@ -13,23 +13,24 @@ export class HeaderComponent implements OnInit {
   @Output() search: EventEmitter<any> = new EventEmitter();
 
   menus: Menu[] =[];
-  private errorMessage;
+
   constructor(private headerService: HeaderService) {
 
   }
 
-  getMenuItem() : void
-  {
-    this.headerService.getMenu()
-      .then(body => this.menus = body);
-
-  }
+  // getMenuItem() : void
+  // {
+  //   this.headerService.getMenu()
+  //     .then(body => this.menus = body);
+  //
+  // }
 
   initSearch() {
     this.search.emit();
   }
   ngOnInit():void {
-    this.getMenuItem();
+    // this.getMenuItem();
+    this.headerService.getMenu().subscribe(menus => this.menus = menus);
     console.log(this.menus)
 
   }
