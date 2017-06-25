@@ -1,4 +1,4 @@
-import {Component, OnInit, Output, EventEmitter} from '@angular/core';
+import {Component, OnInit, Output, EventEmitter, AfterViewInit, ViewChild, ElementRef, Renderer2} from '@angular/core';
 import {Menu} from "./menu";
 import {HeaderService} from "./header.service";
 
@@ -9,30 +9,33 @@ import {HeaderService} from "./header.service";
   styleUrls: ['header.component.less'],
   providers: [HeaderService]
 })
-export class HeaderComponent implements OnInit {
-  @Output() search: EventEmitter<any> = new EventEmitter();
+export class HeaderComponent implements OnInit, AfterViewInit{
 
+  @Output() search: EventEmitter<any> = new EventEmitter();
+  @ViewChild('brand') brand: ElementRef;
   menus: Menu[] =[];
 
-  constructor(private headerService: HeaderService) {
+
+  constructor(private headerService: HeaderService,
+
+  ){
 
   }
 
-  // getMenuItem() : void
-  // {
-  //   this.headerService.getMenu()
-  //     .then(body => this.menus = body);
-  //
-  // }
 
   initSearch() {
     this.search.emit();
   }
+
+
   ngOnInit():void {
     // this.getMenuItem();
     this.headerService.getMenu().subscribe(menus => this.menus = menus);
-    console.log(this.menus)
 
+  }
+
+  ngAfterViewInit(): void {
+    console.log(this.brand.nativeElement.textContent)
   }
 
 }

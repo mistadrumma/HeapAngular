@@ -18,20 +18,11 @@ export class PostDetailComponent implements OnInit {
               private postService: PostService
   ){
     this.id = activateRoute.snapshot.params['id'];
-
-    this.user = this.article['user'];
-    console.log(this.user)
-
   }
 
 
-
   ngOnInit() {
-
-
-    this.article  = this.postService.getPost(this.id);
-
-
+   this.postService.getPostbyID(this.id).subscribe(article => this.article = article);;
   }
 
 }

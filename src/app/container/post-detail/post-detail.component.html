@@ -5,16 +5,44 @@
         <article >
           <header>
             <div class="he-subtitle">
-              <img alt=""  class="icon-user" src="https://secure.gravatar.com/avatar/1b17d4931f914ee75c7f5e5dc7b17734?s=36&amp;d=identicon&amp;r=g" srcset="https://secure.gravatar.com/avatar/1b17d4931f914ee75c7f5e5dc7b17734?s=72&amp;d=identicon&amp;r=g 2x" class="avatar avatar-36 photo" height="36" width="36">
+              <img alt=""  class="icon-user" src="https://secure.gravatar.com/avatar/1b17d4931f914ee75c7f5e5dc7b17734?s=36&amp;d=identicon&amp;r=g" srcset="https://secure.gravatar.com/avatar/1b17d4931f914ee75c7f5e5dc7b17734?s=72&amp;d=identicon&amp;r=g 2x"  height="36" width="36">
               <div class="subtitle-author">
                 <span>
                   Написал
                   <a href="">{{ article.user}}</a>
                   в
+
                 </span>
+                <a href="">{{ article.category}}</a>
+              </div>
+              <div class="subtitle-time">
+                <time class="pubtime">
+                  {{ article.created | date : 'shortDate'}}
+
+                </time>
+                <span class="comments">
+                <i class="fa fa-comment-o"></i><span> {{ article.comments }}</span>
+                </span>
+                <span class="likes">
+                <i class="fic fa fa-heart-o"></i><span> {{ article.likes }}</span>
+                  </span>
+                <span class="views">
+                <i class="fa fa-eye"></i><span> {{ article.views }}</span>
+                    </span>
+
               </div>
             </div>
+            <h1 class="he-title">{{ article.title }}</h1>
           </header>
+          <div class="he-post-content">
+            <div class="post-pretext">
+              {{ article.pretext }}
+            </div>
+            <p>
+              <img src="{{ article.imgUrl }}" alt="{{ article. title }}" class="img-responsive">
+            </p>
+
+          </div>
         </article>
       </div>
 

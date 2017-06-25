@@ -1,5 +1,5 @@
 @import "../../../assets/less/main";
-
+@media screen and (min-width: 993px) and (max-width: 2000px) {
 .he-article {
 
   article {
@@ -29,9 +29,72 @@
 
       .subtitle-author {
         display: block;
-        font-size: 1.05em;
-        padding: 0 0 0.2em 0;
+        font-size: 1em;
+        padding: 7px 0 0.5em 0;
+        a {
+          color: #2672a5;
+        }
       }
+
+      .subtitle-time {
+        font-size: 0.9em;
+        .pubtime {
+          margin: 0;
+          &:after {
+            content: ' \00B7';
+          }
+        }
+        .comments {
+          &:after {
+            content: ' \00B7';
+          }
+        }
+        .likes {
+          &:after {
+            content: ' \00B7';
+          }
+        }
+      }
+
+    }
+    .he-title {
+      font-family: "PT Sans Narrow bold";
+      font-family: "PT Sans Narrow bold";
+      color: @article-title;
+      -webkit-font-smoothing: antialiased;
+      text-shadow: none;
+      margin: 0 0 15px 0;
+      padding: 15px 0;
+      border-bottom: 1px solid whiteSmoke;
+      font-size: 2.75em;
     }
   }
+}
+
+//post content
+.he-post-content {
+  font-size: 1.15em;
+  line-height: 1.6;
+  .post-pretext {
+    clear: both;
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    color: #A7AEB3;
+    font-weight: bold;
+  }
+  p {
+    padding: 0.75em 0;
+  }
+  img {
+    position: relative;
+    display: block;
+    margin: 10px auto;
+    text-align: center;
+    //width: 800px;
+    //height: 600px;
+
+
+  }
+}
+
 }

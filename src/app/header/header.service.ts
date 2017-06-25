@@ -13,30 +13,20 @@ import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class HeaderService {
-  private menuUrl = 'https://heapbackends.herokuapp.com/menu/';  // URL to web api
+  private menuUrl = 'https://heapbackends.herokuapp.com/api/menu/';  // URL to web api
   constructor(private http: Http) {
 
   }
 
-  extractData(res: Response){
+  static extractData(res: Response){
     return res.json();
   }
 
   getMenu() : Observable<Menu[]>{
-    return this.http.get(this.menuUrl).map(this.extractData)
+    return this.http.get(this.menuUrl).map(HeaderService.extractData)
   }
 
-  // getMenu(): Promise<Menu[]> {
-  //   return this.http.get(this.menuUrl)
-  //     .toPromise()
-  //     .then(response => response.json().data as Menu[])
-  //     .catch(HeaderService.handleError);
-  // }
-  //
-  // private static handleError(error: any): Promise<any> {
-  //   console.error('An error occurred', error); // for demo purposes only
-  //   return Promise.reject(error.message || error);
-  // }
+
 }
 
 

@@ -17,8 +17,9 @@ export class MainArticleComponent implements OnInit {
 
 
 
+
   ngOnInit() {
-    this.posts = this.postService.getData();
+    this.postService.getData().subscribe(posts => this.posts = posts);
 
   }
 }

@@ -1,20 +1,45 @@
 import { Injectable } from '@angular/core';
 import {MainArticle} from "./container/main-article/main-article";
+import {Http} from "@angular/http";
+import {Observable} from "rxjs";
+
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/debounceTime';
+import 'rxjs/add/operator/distinctUntilChanged';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/switchMap';
+import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class PostService {
-  private data:Array<any> = [
-    {id: 1, title: 'Инструкция: как перевестипроект Django с SQLite на MySQL без боли', user: 'mistadrumma', category: 'разное', date: "03/05/2017", pretext: 'SQLite3 является СУБД-движком по умолчанию в Python веб-фреймворке Django, а также, как сообщается на официальном сайте проекта, самым часто используемым движком в мире', likes: 12, comments: 6, views: 45, imgUrl: 'assets/img/startup-photos.jpg'},
-    {id: 2, title: 'Инструкция: как перевестипроект Django с SQLite на MySQL без боли', user: 'mistadrumma', category: 'разное', date: "03/05/2017", pretext: 'SQLite3 является СУБД-движком по умолчанию в Python веб-фреймворке Django, а также, как сообщается на официальном сайте проекта, самым часто используемым движком в мире', likes: 12, comments: 6, views: 45, imgUrl:'assets/img/article.jpg'}
-  ];
-  constructor() { }
+  private menuUrl = 'https://heapbackends.herokuapp.com/api/articles/'; // URL to web api
 
-  getData () {
-    return this.data
+  // headers = new Headers({
+  //
+  //   'Content-Type': 'application/json',
+  // });
+  constructor(private http: Http) {
+
   }
 
-  getPost (id) {
-    return this.data[id - 1];
+  // extractData(res: Response){
+  //   return res.json();
+  // }
+
+  getData(): Observable<MainArticle[]> {
+    return this.http.get(this.menuUrl).map(res => res.json()).catch(err => {
+
+      return Observable.throw(err);
+    });
+  }
+
+
+  getPostbyID(id: number): Observable<MainArticle[]> {
+    let url = this.menuUrl + id + '/';
+    return this.http.get(url).map(res => res.json()).catch(err => {
+
+      return Observable.throw(err);
+    });
   }
 }
 
