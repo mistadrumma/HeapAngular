@@ -11,6 +11,7 @@ import { PostDetailComponent } from './container/post-detail/post-detail.compone
 import { routing,
   appRoutingProviders }  from './app.routes';
 import {HeaderService} from "./header/header.service";
+import { ArticleListComponent } from './container/article-list/article-list.component';
 
 
 
@@ -30,6 +31,7 @@ import {HeaderService} from "./header/header.service";
     ContainerComponent,
     MainArticleComponent,
     PostDetailComponent,
+    ArticleListComponent,
   ],
 
   providers: [
