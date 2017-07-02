@@ -41,6 +41,7 @@
             <p>
               <img src="{{ article.imgUrl }}" alt="{{ article. title }}" class="img-responsive">
             </p>
+            <p [innerHTML] = "article.bodytext" ></p>
 
           </div>
         </article>
