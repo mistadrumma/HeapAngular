@@ -1,7 +1,11 @@
+
 <div class="container">
   <div class="row">
     <div class="col-lg-10 col-sm-12">
       <div  class="he-article" >
+        <div class="center">
+          <app-loader [loading]="loading"></app-loader>
+        </div>
         <article >
           <header>
             <div class="he-subtitle">
@@ -17,7 +21,7 @@
               </div>
               <div class="subtitle-time">
                 <time class="pubtime">
-                  {{ article.created | date : 'shortDate'}}
+                  {{ article.created | amTimeAgo}}
 
                 </time>
                 <span class="comments">

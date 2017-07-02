@@ -7,7 +7,7 @@
             <h2><a [routerLink]="['/post',  post.id]" class="mn-link">{{post.title}}</a>
             </h2>
             <p class="main-subtitle"> Написал <a class="m-sub-autor" href="#!">{{ post.user }}</a> в
-              <a href="#!" class="m-sub-cat">{{ post.category }}</a> {{ post.created | date: 'mediumDate' }}</p>
+              <a href="#!" class="m-sub-cat">{{ post.category }}</a> {{ post.created | amDateFormat:'LL' }}</p>
           </header>
           <p class="main-text">
             {{ post.pretext }}

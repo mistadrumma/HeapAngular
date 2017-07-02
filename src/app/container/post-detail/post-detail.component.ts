@@ -14,6 +14,7 @@ export class PostDetailComponent implements OnInit {
   article: any= {} ;
   id: number;
   user: string;
+  loading: boolean = false;
   constructor(private activateRoute: ActivatedRoute,
               private postService: PostService
   ){
@@ -21,8 +22,11 @@ export class PostDetailComponent implements OnInit {
   }
 
   getPostDetail() {
-
-    this.postService.getPostbyID(this.id).subscribe(article => this.article = article);
+    this.loading = true;
+    this.postService.getPostbyID(this.id).subscribe(article => {
+      this.article = article;
+      this.loading = false;}
+      , () => this.loading = false);
 
   }
   ngOnInit() {

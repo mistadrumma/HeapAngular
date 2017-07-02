@@ -1,4 +1,4 @@
-<section class="he-articles"> <!--articles-->
+<section class="he-articles" > <!--articles-->
   <div class="row">
 
     <div *ngFor="let post of posts" class="col-md-4">
@@ -14,7 +14,7 @@
             <div class="post-meta post-meta-one">
                                                 <span class="post-meta-author">Написал <a href="#!" class="bypostauthor">{{ post.user }} </a>
                                                 </span>
-              <a href="#!" >{{ post.created | date: 'mediumDate' }}</a>
+              <time>{{ post.created | amDateFormat:'LL' }}</time>
             </div>
 
             <a [routerLink]="['/post',  post.id]" class="post-title">

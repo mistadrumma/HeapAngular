@@ -12,6 +12,10 @@ import { routing,
   appRoutingProviders }  from './app.routes';
 import {HeaderService} from "./header/header.service";
 import { ArticleListComponent } from './container/article-list/article-list.component';
+import { LoaderComponent } from './shared/loader/loader.component';
+
+import {MomentModule} from "angular2-moment";
+import 'moment/locale/ru';
 
 
 
@@ -23,6 +27,7 @@ import { ArticleListComponent } from './container/article-list/article-list.comp
     HttpModule,
     routing,
     JsonpModule,
+    MomentModule,
   ],
   declarations: [
     AppComponent,
@@ -32,6 +37,8 @@ import { ArticleListComponent } from './container/article-list/article-list.comp
     MainArticleComponent,
     PostDetailComponent,
     ArticleListComponent,
+    LoaderComponent,
+
   ],
 
   providers: [

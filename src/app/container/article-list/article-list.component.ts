@@ -10,10 +10,15 @@ import {MainArticle} from "../main-article/main-article";
 })
 export class ArticleListComponent implements OnInit {
   posts: MainArticle[] = [];
+
   constructor(private postService: PostService) { }
 
   ngOnInit() {
-    this.postService.getData().subscribe(posts => this.posts = posts);
+
+    this.postService.getData().subscribe(posts => {
+      this.posts = posts;
+
+    });
   }
 
 }
