@@ -11,7 +11,7 @@ import {MainArticle} from "../main-article/main-article";
 })
 export class PostDetailComponent implements OnInit {
 
-  article: MainArticle[] = [] ;
+  article: any= {} ;
   id: number;
   user: string;
   constructor(private activateRoute: ActivatedRoute,
@@ -27,7 +27,7 @@ export class PostDetailComponent implements OnInit {
   }
   ngOnInit() {
     this.getPostDetail();
-    console.log(this.article)
+
 
 
   }
